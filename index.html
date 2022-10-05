@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Few Company</title>
+  </head>
+  <body onLoad="toggleMusic()">
+    <a
+      target="blank"
+      href="https://wa.me/5511996932654?"
+      class="btn-whatsapp-pulse btn-whatsapp-pulse-border"
+    >
+      <img width="45px" src="wpp-logo.png" />
+    </a>
+    <div onclick="toggleMusic()" class="few" alt="Few Logo">
+      <div class="loader">
+        <div class="circles">
+          <span class="one"></span>
+          <span class="two"></span>
+          <span class="three"></span>
+        </div>
+        <div class="pacman">
+          <span class="top"></span>
+          <span class="bottom"></span>
+          <span class="left"></span>
+          <div class="eye"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+  <style>
+    body,
+    html {
+      margin: 0;
+      padding: 0;
+      user-select: none;
+    }
+
+    .few {
+      background-image: url("./few.png");
+      background-size: cover;
+      background-position: center;
+      height: 100vh;
+      width: 100%;
+    }
+
+    /* pacman */
+    .loader {
+      position: absolute;
+      top: 25%;
+      left: 50%;
+      height: 60px;
+      width: 160px;
+      margin: 0;
+      -webkit-transform: translate(-50%, -50%);
+      transform: translate(-50%, -50%);
+    }
+    .circles {
+      position: absolute;
+      left: -5px;
+      top: 0;
+      height: 60px;
+      width: 180px;
+    }
+    .circles span {
+      position: absolute;
+      top: 25px;
+      height: 12px;
+      width: 12px;
+      border-radius: 12px;
+      background-color: #efefef;
+    }
+    .circles span.one {
+      right: 80px;
+    }
+    .circles span.two {
+      right: 40px;
+    }
+    .circles span.three {
+      right: 0px;
+    }
+    .circles {
+      -webkit-animation: animcircles 0.5s infinite linear;
+      animation: animcircles 0.5s infinite linear;
+    }
+    @-webkit-keyframes animcircles {
+      0% {
+        -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+      }
+      100% {
+        -webkit-transform: translate(-40px, 0px);
+        transform: translate(-40px, 0px);
+      }
+    }
+    @keyframes animcircles {
+      0% {
+        -webkit-transform: translate(0px, 0px);
+        transform: translate(0px, 0px);
+      }
+      100% {
+        -webkit-transform: translate(-40px, 0px);
+        transform: translate(-40px, 0px);
+      }
+    }
+    .pacman {
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 60px;
+      width: 60px;
+    }
+    .pacman .eye {
+      position: absolute;
+      top: 10px;
+      left: 30px;
+      height: 7px;
+      width: 7px;
+      border-radius: 7px;
+      background-color: #1c163a;
+    }
+    .pacman span {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 60px;
+      width: 60px;
+    }
+    .pacman span::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      height: 30px;
+      width: 60px;
+      background-color: #fffb16;
+    }
+    .pacman .top::before {
+      top: 0;
+      border-radius: 60px 60px 0px 0px;
+    }
+    .pacman .bottom::before {
+      bottom: 0;
+      border-radius: 0px 0px 60px 60px;
+    }
+    .pacman .left::before {
+      bottom: 0;
+      height: 60px;
+      width: 30px;
+      border-radius: 60px 0px 0px 60px;
+    }
+    .pacman .top {
+      -webkit-animation: animtop 0.5s infinite;
+      animation: animtop 0.5s infinite;
+    }
+    @-webkit-keyframes animtop {
+      0%,
+      100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      50% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+    @keyframes animtop {
+      0%,
+      100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      50% {
+        -webkit-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+      }
+    }
+    .pacman .bottom {
+      -webkit-animation: animbottom 0.5s infinite;
+      animation: animbottom 0.5s infinite;
+    }
+    @-webkit-keyframes animbottom {
+      0%,
+      100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      50% {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+    @keyframes animbottom {
+      0%,
+      100% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+      }
+      50% {
+        -webkit-transform: rotate(45deg);
+        transform: rotate(45deg);
+      }
+    }
+
+    /* WHATSAPP BUTTON*/
+
+    .btn-whatsapp-pulse {
+      z-index: 3;
+      background: #25d366;
+      color: white;
+      position: fixed;
+      cursor: pointer;
+      bottom: 10px;
+      right: 10px;
+      font-size: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 0;
+      height: 0;
+      padding: 35px;
+      text-decoration: none;
+      border-radius: 50%;
+      animation-name: pulse;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.5);
+      }
+      80% {
+        box-shadow: 0 0 0 14px rgba(37, 211, 102, 0);
+      }
+    }
+
+    .btn-whatsapp-pulse-border {
+      bottom: 50px;
+      right: 20px;
+      animation-play-state: paused;
+    }
+
+    .btn-whatsapp-pulse-border::before {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      padding: 25px;
+      border: 5px solid #25d366;
+      opacity: 0.75;
+      animation-name: pulse-border;
+      animation-duration: 1.5s;
+      animation-timing-function: ease-out;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes pulse-border {
+      0% {
+        padding: 25px;
+        opacity: 0.75;
+      }
+      75% {
+        padding: 50px;
+        opacity: 0;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+  </style>
+  <script>
+    var audio = new Audio("./musiga.mp3");
+    audio.volume = 0.25;
+
+    function toggleMusic() {
+      audio.paused ? audio.play() : audio.pause();
+    }
+  </script>
+</html>
